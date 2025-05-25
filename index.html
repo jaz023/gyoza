@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>昼飯発注/午餐訂購</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+  <img src="images/sumitomo.png" class="logo">
+    <h2>オンラインオーダー/線上點餐</h2>
+    <form id="orderForm">
+
+  <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+
+  <div class="form-group">
+    <label for="name">名前/姓名：</label>
+      <input type="text" class="form-input name" id="name" placeholder="名前入力/輸入姓名">
+  </div>
+
+      <div class="menu-item">
+        <img src="images/butanikuyakigyouza.png" alt="豚肉焼き餃子">
+        <div class="info">
+          <h3>豚肉焼き餃子/招牌鍋貼</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+          <select class="qty" name="qty[]" data-item="豚肉焼き餃子/招牌鍋貼">
+           <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/nirayakigyouza.jpg" alt="ニラ焼き餃子">
+        <div class="info">
+          <h3>ニラ焼き餃子/韭菜鍋貼</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+          <select class="qty" name="qty[]" data-item="ニラ焼き餃子/韭菜鍋貼">
+           <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/karaigyouza.png" alt="辛い焼き餃子">
+        <div class="info">
+          <h3>辛い焼き餃子/韓式辣味鍋貼</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+          <select class="qty" name="qty[]" data-item="辛い焼き餃子/韓式辣味鍋貼">
+          <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/ko-nnyakigyouza.png" alt="コーン焼き餃子">
+        <div class="info">
+          <h3>コーン焼き餃子/玉米鍋貼</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+          <select class="qty" name="qty[]" data-item="コーン焼き餃子/玉米鍋貼">
+           <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/kare-yakigyouza.jpg" alt="カレーモモ肉焼き餃子">
+        <div class="info">
+          <h3>カレーモモ肉焼き餃子/咖哩雞肉鍋貼</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+          <select class="qty" name="qty[]" data-item="カレーモモ肉焼き餃子/咖哩雞肉鍋貼">
+           <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/butanikumizugyouza.png" alt="豚肉水餃子">
+        <div class="info">
+          <h3>豚肉水餃子/招牌水餃</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+         <select class="qty" name="qty[]" data-item="豚肉水餃子/招牌水餃">
+          <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/niramizugyouza.png" alt="ニラ水餃子">
+        <div class="info">
+          <h3>ニラ水餃子/韭菜水餃</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+         <select class="qty" name="qty[]" data-item="ニラ水餃子/韭菜水餃">
+          <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/karaimizugyouza.png" alt="辛い水餃子">
+        <div class="info">
+          <h3>辛い水餃子/韓式辣味水餃</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+         <select class="qty" name="qty[]" data-item="辛い水餃子/韓式辣味水餃">
+          <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/kare-yakigyouza.jpg" alt="カレーモモ肉水餃子">
+        <div class="info">
+          <h3>カレーモモ肉水餃子/咖哩雞肉水餃</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+         <select class="qty" name="qty[]" data-item="カレーモモ肉水餃子/咖哩雞肉水餃">
+           <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/ko-nnmizugyouza.png" alt="コーン水餃子">
+        <div class="info">
+          <h3>コーン水餃子/玉米水餃</h3>
+
+          <p class="price" data-price="7">金額：7</p>
+
+         <select class="qty" name="qty[]" data-item="コーン水餃子/玉米水餃">
+           <option value="0">0</option>
+           <option value="5">5</option>
+           <option value="8">8</option>
+           <option value="10">10</option>
+           <option value="12">12</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="20">20</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="500" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/jirunashimennseimai.png" alt="汁なし麺">
+        <div class="info">
+          <h3>汁なし麺/古早味乾麵</h3>
+
+          <p class="price" data-price="45">金額：45</p>
+
+         <select class="qty" name="qty[]" data-item="汁なし麺/古早味乾麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/jirunashimennfutai.png" alt="看板汁なし麺">
+        <div class="info">
+          <h3>看板汁なし麺/招牌乾麵</h3>
+
+          <p class="price" data-price="55">金額：55</p>
+
+         <select class="qty" name="qty[]" data-item="看板汁なし麺/招牌乾麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/karajirunashidanndannmenn.png" alt="辛い汁なし担々麺">
+        <div class="info">
+          <h3>辛い汁なし担々麺/紹辣乾麵</h3>
+
+          <p class="price" data-price="60">金額：60</p>
+
+         <select class="qty" name="qty[]" data-item="辛い汁なし担々麺/紹辣乾麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/komaso-sujirunashimenn.png" alt="コマソース汁なし麺">
+        <div class="info">
+          <h3>コマソース汁なし麺/麻醬乾麵</h3>
+
+          <p class="price" data-price="55">金額：55</p>
+
+         <select class="qty" name="qty[]" data-item="コマソース汁なし麺/麻醬乾麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/sannramenn.png" alt="サンラー麺">
+        <div class="info">
+          <h3>サンラー麺/酸辣麵</h3>
+
+          <p class="price" data-price="70">金額：70</p>
+
+         <select class="qty" name="qty[]" data-item="サンラー麺/酸辣麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/ookiiunntannmenn.png" alt="大きいウンタン麺">
+        <div class="info">
+          <h3>大きいウンタン麺/菜肉大餛飩麵</h3>
+
+          <p class="price" data-price="80">金額：80</p>
+
+         <select class="qty" name="qty[]" data-item="大きいウンタン麺/菜肉大餛飩麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/chiisaiunntannmenn.png" alt="ミニウンタン麺">
+        <div class="info">
+          <h3>ミニウンタン麺/珍珠餛飩麵</h3>
+
+          <p class="price" data-price="70">金額：70</p>
+
+         <select class="qty" name="qty[]" data-item="ミニウンタン麺/珍珠餛飩麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/za-saibutanikumenn.png" alt="ザーサイ豚肉麺">
+        <div class="info">
+          <h3>ザーサイ豚肉麺/榨菜肉絲麵</h3>
+
+          <p class="price" data-price="80">金額：80</p>
+
+         <select class="qty" name="qty[]" data-item="ザーサイ豚肉麺/榨菜肉絲麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+       <div class="menu-item">
+        <img src="images/sannramizugyouza.png" alt="サンラー水餃子">
+        <div class="info">
+          <h3>サンラー水餃子/酸辣湯餃</h3>
+
+          <p class="price" data-price="90">金額：90</p>
+
+         <select class="qty" name="qty[]" data-item="サンラー水餃子/酸辣湯餃">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <button type="submit">決定/確定</button>
+    </form>
+    <p id="response"></p>
+  </div>
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <h3>注文内容決定/確認訂單內容</h3>
+      <div id="orderSummary"></div>
+      <button id="submitOrder" type="button">送ります/送出訂單</button>
+      <button onclick="closeModal()" type="button">キャンセル/取消</button>
+      </div>
+  </div>
+
+  <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_09c1ffb05d.mp3" preload="auto"></audio>
+   
+  <div id="finalConfirmModal" class="modal">
+    <div class="modal-content">
+      <h3>注文しました、ありがとうございます！/訂單已送出，感謝您的訂購！</h3>
+      <button onclick="document.getElementById('finalConfirmModal').classList.remove('show')" type="button">確定</button>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
